@@ -7,7 +7,10 @@ sass:
 
 # site settngs
 title: Phaedryx
-description: a website
+author: Tad Thorley
+description: webby goodness
+twitter_username: phaedryx
+github_username: phaedryx
 
 # theme
 foundation:

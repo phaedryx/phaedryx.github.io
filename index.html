@@ -1,23 +1,33 @@
 ---
 layout: default
+title: Main
 ---
-
-<div class="home">
-
-  <h1 class="page-heading">Posts</h1>
-
-  <ul class="post-list">
+<div class="row">
+  <div class="small-8 columns">
+    <h2>Articles</h2>
+    <ul class="unadorned">
     {% for post in site.posts %}
       <li>
-        <span class="post-meta">{{ post.date | date: "%b %-d, %Y" }}</span>
-
-        <h2>
-          <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
-        </h2>
+        <h3><a href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a></h3>
+        <p>
+          {{ post.summary }}
+          <br>
+          <small><i class="fa fa-calendar"></i> {{ post.date | date: "%b %-d, %Y" }}</small>
+          &nbsp; &nbsp;
+          <small><i class="fa fa-list-ul"></i> {{ post.categories | join: ', ' }}</small>
+        </p>
       </li>
     {% endfor %}
-  </ul>
-
-  <p class="rss-subscribe">subscribe <a href="{{ "/feed.xml" | prepend: site.baseurl }}">via RSS</a></p>
-
+    </ul>
+  </div>
+  <div class="small-4 columns">
+    <ul class="unadorned">
+      <li><i class="fa fa-info-circle"></i> <a href="#">about</a></li>
+      <li><i class="fa fa-rss-square"></i> <a href="{{ "/feed.xml" | prepend: site.baseurl }}">subscribe</a></li>
+      <li><i class="fa fa-github-square"></i> <a href="https://github.com/{{ site.github_username }}">{{ site.github_username}}</a></li>
+      <li><i class="fa fa-twitter-square"></i> <a href="https://twitter.com/{{ site.twitter_username }}">{{ site.twitter_username }}</a></li>
+      <li><i class="fa fa-google-plus-square"></i> <a href="https://plus.google.com/+TadThorley">Tad Thorley</a></li>
+      <li><i class="fa fa-external-link-square"></i> <a href="http://tadthorley.com/">TadThorley.com</a></li>
+    </ul>
+  </div>
 </div>

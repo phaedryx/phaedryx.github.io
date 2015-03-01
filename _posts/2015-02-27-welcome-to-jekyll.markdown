@@ -2,6 +2,7 @@
 layout: post
 title:  "Welcome to Jekyll!"
 date:   2015-02-27 21:45:49
+summary: a young man, struggling to find his way in the world
 categories: jekyll update
 ---
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris massa ipsum, tempus et consequat sit amet, ullamcorper sed risus. Phasellus ac tortor enim. Duis eu urna mi. Etiam ullamcorper eu turpis at ornare. In nec turpis et orci fermentum consequat ut a velit. Donec auctor nunc nec est tempor, vel lobortis lorem tempor. Vestibulum id mauris lorem. Aliquam id magna ipsum. Proin varius volutpat lacus, nec molestie lacus congue at. Proin a turpis id mauris cursus feugiat. Sed id hendrerit metus. Nulla eget congue magna. Sed vulputate, massa eu viverra tempus, urna lorem suscipit quam, et auctor sapien nibh dapibus ex. Duis in justo rhoncus, venenatis elit ut, dapibus nibh. Praesent cursus felis at est imperdiet efficitur.

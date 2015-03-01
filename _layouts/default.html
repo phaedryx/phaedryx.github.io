@@ -9,18 +9,19 @@
     <title>{{ site.title }} - {{ page.title }}</title>
     <link href='http://fonts.googleapis.com/css?family=Lato|Fira+Mono:400,700|Merriweather:400,400italic,700' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="/foundation/app.css" />
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
     <script src="/foundation/js/vendor/modernizr.js"></script>
   </head>
   <body>
-    {% include header.html %}
     <section role="main" class="scroll-container">
       <div class="row">
         <div class="small-centered small-9 columns">
+          {% include header.html %}
           {{ content }}
+          {% include footer.html %}
         </div>
       </div>
     </section>
-    {% include footer.html %}
     <script src="/foundation/js/vendor/jquery.js"></script>
     <script src="/foundation/js/vendor/fastclick.js"></script>
     <script src="/foundation/js/foundation.min.js"></script>
