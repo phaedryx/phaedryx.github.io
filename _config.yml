@@ -4,6 +4,7 @@ permalink: /:year/:month/:day/:title
 sass:
   sass_dir: foundation/_scss
   style: compressed
+excerpt_separator: "" # http://blog.slaks.net/2013-08-09/jekyll-tag-was-never-closed/
 
 # site settngs
 title: Phaedryx

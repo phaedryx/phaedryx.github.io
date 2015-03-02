@@ -1,3 +1,23 @@
+---
+layout: post
+title:  "Mukluk: A Dark Theme For Pygments"
+date:   2015-03-01
+summary: Mukluk is a dark pygments/rouge theme created for my Jekyll blog
+categories: bootflat jekyll pygments rouge theme
+---
+
+When I decided to split my blog into two blogs (technical and non-technical), I
+realized that I would need to have good code syntax highlighting for my
+technical blog (this one). I developed this theme for pygments/rouge based on
+the [bootflat](https://bootflat.github.io/documentation.html "Bootflat") color
+scheme.
+
+I'm calling it "Mukluk" because they are boots with flat soles (and it is a fun
+word to say).
+
+Here is the sass file I use:
+
+{% highlight sass %}
 /**
  * Syntax highlighting styles
    Mukluk, based on bootflat
@@ -18,11 +38,6 @@ $gray        : #656D78;
 $dark-gray   : #434A54;
 
 .highlight {
-  pre {
-    code {
-      font-family: "Fira Mono", monospace !important;
-    }
-  }
   color: $medium-gray;
   line-height: 1.2em;
   background: $dark-gray;
@@ -92,3 +107,87 @@ $dark-gray   : #434A54;
 
   .lineno { color: $gray }
 }
+{% endhighlight %}
+
+Here are some example of the syntax highlighting in various languages:
+
+{% highlight ruby %}
+# ruby
+module Foo
+  def foo
+    puts "foo"
+  end
+end
+
+class Bar < Baz
+  include Foo
+  attr :quux
+
+  def initialize(options)
+    @options = options || {}
+  end
+
+  def types
+    num = 10_000
+    ber = 1234.5678
+    3.times do
+      puts num
+    end
+    string = "Hello World"
+    range  = 'a'..'z'
+    regex  = /foobar/
+  end
+
+  private
+
+  def collections
+    ages         = {bob: 20, bill: 32, jane: 19}
+    hash_rockets = {:foo => "bar", :baz => "quux"}
+  end
+end
+{% endhighlight %}
+
+{% highlight javascript linenos %}
+// javascript
+$(document).ready(function() {
+  var foo = "bar";
+  window.foo = foo;
+
+  var baz = {
+    quux: function(corge) {
+      console.log(corge);
+      return corge;
+    },
+    _grault: 1234
+  }
+});
+{% endhighlight %}
+
+{% highlight lua %}
+-- lua
+local a = require('mod2')
+local b = require('mod2')
+
+function fib(n)
+  if n < 2 then return 1 end
+  return fib(n - 2) + fib(n - 1)
+end
+
+t = {key1 = 'value1', key2 = false}
+print(t.key1)
+t.newKey = {}
+t.key2 = nil
+
+{% endhighlight %}
+
+{% highlight coffeescript linenos %}
+# coffeescript
+if this.studyingEconomics
+  buy()  while supply > demand
+  sell() until supply > demand
+
+num = 6
+lyrics = while num -= 1
+  "#{num} little monkeys, jumping on the bed.
+    One fell out and bumped his head."
+{% endhighlight %}
