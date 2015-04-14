@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     
     <title>Phaedryx - Mukluk: A Dark Theme For Pygments</title>
-    <link href='http://fonts.googleapis.com/css?family=Lato|Fira+Mono:400,700|Merriweather:400,400italic,700' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Fira+Sans:400,700,400italic|Playfair+Display:400,700,400italic,700italic|Fira+Mono' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="/foundation/app.css" />
     <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
     <script src="/foundation/js/vendor/modernizr.js"></script>
@@ -13,20 +13,31 @@
   <body>
     <section role="main" class="scroll-container">
       <div class="row">
-        <div class="small-centered small-9 columns">
+        <div class="small-12 columns">
           <div class="row">
-  <div class="small-12 columns">
-    <h4><img src="/assets/logo.png"> <a href="/">phaedryx.com</a></h4>
+  <div id="logo" class="small-1 columns">
+    <a href="/"><img src="/assets/logo.png"></a>
   </div>
-  <hr>
+  <div class="small-11 columns">
+    Nav here
+  </div>
 </div>
 
-          <div class="post">
-  <header class="post-header">
-    <h2 class="post-title">Mukluk: A Dark Theme For Pygments</h2>
-    <p class="post-meta">Mar 1, 2015</p>
-  </header>
-  <article class="post-content">
+          <div class="row">
+  <div class="small-11 small-offset-1 columns">
+    <h1>Mukluk: A Dark Theme For Pygments</h1>
+  </div>
+</div>
+<div class="row">
+  <div class="small-1 columns">
+    <div class="date">
+      <div class="month">Mar</div>
+      <div class="day">1</div>
+      <div class="year">2015</div>
+    </div>
+    <!-- <p class="post-meta">Mar 1, 2015</p> -->
+  </div>
+  <div class="small-11 columns post">
     <p>When I decided to split my blog into two blogs (technical and non-technical), I
 realized that I would need to have good code syntax highlighting for my
 technical blog (this one). I developed this theme for pygments/rouge based on
@@ -203,7 +214,7 @@ word to say).</p>
 <span class="lineno">9</span> <span class="s">    One fell out and bumped his head.&quot;</span></code></pre></div>
 
 
-  </article>
+  </div>
 </div>
 
           <div id="footer" class="row">

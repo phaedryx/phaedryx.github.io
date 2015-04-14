@@ -1,3 +1,10 @@
+body {
+  border-top: 2px solid $gray6;
+  padding-top: 1em;
+}
+#logo {
+  text-align: center;
+}
 #footer {
   color: $charcoal;
 }
@@ -6,4 +13,31 @@ ul.unadorned {
   margin: 0;
   padding: 0;
   list-style-type: none;
+}
+
+.date {
+  .month {
+    color: $gray1;
+    background: $grapefruit;
+    text-transform: uppercase;
+    text-align: center;
+    padding: 0;
+    border-radius: 3px 3px 0 0;
+  }
+  .day {
+    text-align: center;
+    font-size: 2em;
+    background: #FFF;
+    margin: 0;
+    padding: 0;
+  }
+  .year {
+    text-align: center;
+    background: $gray6;
+    color: $gray1;
+    border-radius: 0 0 3px 3px;
+  }
+}
+.post {
+  color: $gray6;
 }
