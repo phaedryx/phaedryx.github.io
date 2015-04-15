@@ -1,12 +1,29 @@
 body {
   border-top: 2px solid $gray6;
+  background-image: url("../assets/fabric_of_squares_gray.png")
+}
+#page {
+  background: #FFF;
   padding-top: 1em;
+  background-image: url("../assets/column.png");
+  background-repeat: repeat-y;
+}
+#nav {
+  margin-bottom: 42px;
+  a {
+    font-size: 2rem;
+    color: $gray6;
+    border-bottom: 2px solid $aqua;
+  }
+}
+.title {
+  margin-bottom: 21px;
+}
+.post-padding {
+  padding: 0 84px;
 }
 #logo {
   text-align: center;
-}
-#footer {
-  color: $charcoal;
 }
 
 ul.unadorned {
@@ -26,7 +43,8 @@ ul.unadorned {
   }
   .day {
     text-align: center;
-    font-size: 2em;
+    font-weight: bold;
+    font-size: 1.6em;
     background: #FFF;
     margin: 0;
     padding: 0;

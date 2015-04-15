@@ -2,8 +2,11 @@
 layout: default
 ---
 <div class="row">
-  <div class="small-11 small-offset-1 columns">
-    <h1>{{ page.title }}</h1>
+  <div class="small-1 columns">
+
+  </div>
+  <div class="post-padding small-11 columns">
+    <h1 class="title">{{ page.title }}</h1>
   </div>
 </div>
 <div class="row">
@@ -15,7 +18,7 @@ layout: default
     </div>
     <!-- <p class="post-meta">{{ page.date | date: "%b %-d, %Y" }}{% if page.author %} • {{ page.author }}{% endif %}{% if page.meta %} • {{ page.meta }}{% endif %}</p> -->
   </div>
-  <div class="small-11 columns post">
+  <div class="post-padding small-11 columns">
     {{ content }}
   </div>
 </div>
