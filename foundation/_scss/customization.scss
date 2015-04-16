@@ -1,29 +1,25 @@
 body {
   border-top: 2px solid $gray6;
-  background-image: url("../assets/fabric_of_squares_gray.png")
+  // background-image: url("../assets/fabric_of_squares_gray.png")
 }
 #page {
   background: #FFF;
   padding-top: 1em;
-  background-image: url("../assets/column.png");
-  background-repeat: repeat-y;
 }
 #nav {
   margin-bottom: 42px;
   a {
-    font-size: 2rem;
+    padding: 0 1em;
+    font-size: 1.2rem;
     color: $gray6;
-    border-bottom: 2px solid $aqua;
+    border-bottom: 3px solid $aqua;
   }
 }
 .title {
   margin-bottom: 21px;
 }
-.post-padding {
-  padding: 0 84px;
-}
 #logo {
-  text-align: center;
+  text-align: right;
 }
 
 ul.unadorned {
@@ -33,6 +29,8 @@ ul.unadorned {
 }
 
 .date {
+  width: 4em;
+  float: right;
   .month {
     color: $gray1;
     background: $grapefruit;
@@ -45,7 +43,7 @@ ul.unadorned {
     text-align: center;
     font-weight: bold;
     font-size: 1.6em;
-    background: #FFF;
+    background: $gray1;
     margin: 0;
     padding: 0;
   }
