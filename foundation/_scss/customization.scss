@@ -1,58 +1,46 @@
 body {
   border-top: 2px solid $gray6;
-  // background-image: url("../assets/fabric_of_squares_gray.png")
 }
 #page {
   background: #FFF;
   padding-top: 1em;
 }
 #nav {
-  margin-bottom: 42px;
+  margin-bottom: 2em;
   a {
-    padding: 0 1em;
-    font-size: 1.2rem;
+    padding: 1em;
+    font-size: 2rem;
     color: $gray6;
-    border-bottom: 3px solid $aqua;
+  }
+  a:hover {
+    color: $blue-jeans;
   }
 }
-.title {
-  margin-bottom: 21px;
+.date {
+  text-transform: uppercase;
+  font-size: 0.75em;
 }
-#logo {
-  text-align: right;
+.categories {
+  font-size: 0.75em;
 }
-
 ul.unadorned {
   margin: 0;
   padding: 0;
   list-style-type: none;
 }
-
-.date {
-  width: 4em;
-  float: right;
-  .month {
-    color: $gray1;
-    background: $grapefruit;
-    text-transform: uppercase;
-    text-align: center;
-    padding: 0;
-    border-radius: 3px 3px 0 0;
-  }
-  .day {
-    text-align: center;
-    font-weight: bold;
-    font-size: 1.6em;
-    background: $gray1;
-    margin: 0;
-    padding: 0;
-  }
-  .year {
-    text-align: center;
-    background: $gray6;
-    color: $gray1;
-    border-radius: 0 0 3px 3px;
-  }
+.center {
+  text-align: center;
+}
+.right {
+  text-align: right;
+}
+.fulljustify {
+  text-align: justify;
+}
+.fulljustify:after {
+  content: "";
+  display: inline-block;
+  width: 100%;
 }
 .post {
   color: $gray6;

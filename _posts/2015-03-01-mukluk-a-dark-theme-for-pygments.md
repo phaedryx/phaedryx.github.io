@@ -2,7 +2,7 @@
 layout: post
 title:  "Mukluk: A Dark Theme For Pygments"
 date:   2015-03-01
-summary: Mukluk is a dark pygments/rouge theme created for my Jekyll blog
+summary: Mukluk is a dark pygments/rouge theme created for my Jekyll blog. It has support for multiple programming languages.
 categories: bootflat jekyll pygments rouge theme
 ---
 

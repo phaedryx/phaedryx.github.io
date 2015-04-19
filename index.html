@@ -2,9 +2,17 @@
 layout: default
 title: Main
 ---
+<div class="small-12 columns fulljustify">
+  <i class="fa fa-google-plus-square"></i> <a href="https://plus.google.com/+TadThorley">Tad Thorley</a>&nbsp;&nbsp;
+  <i class="fa fa-external-link-square"></i> <a href="http://tadthorley.com/">TadThorley.com</a>&nbsp;&nbsp;
+  <i class="fa fa-info-circle"></i> <a href="#">about</a>&nbsp;&nbsp;
+  <i class="fa fa-rss-square"></i> <a href="{{ "/feed.xml" | prepend: site.baseurl }}">subscribe</a>&nbsp;&nbsp;
+  <i class="fa fa-github-square"></i> <a href="https://github.com/{{ site.github_username }}">{{ site.github_username}}</a>&nbsp;&nbsp;
+  <i class="fa fa-twitter-square"></i> <a href="https://twitter.com/{{ site.twitter_username }}">{{ site.twitter_username }}</a>
+</div>
 <div class="row">
-  <div class="small-8 columns">
-    <h2>Articles</h2>
+  <div class="small-12 columns">
+    <h1>Articles</h1>
     <ul class="unadorned">
     {% for post in site.posts %}
       <li>
@@ -12,22 +20,11 @@ title: Main
         <p>
           {{ post.summary }}
           <br>
-          <small><i class="fa fa-calendar"></i> {{ post.date | date: "%b %-d, %Y" }}</small>
-          &nbsp; &nbsp;
-          <small><i class="fa fa-list-ul"></i> {{ post.categories | join: ', ' }}</small>
+          <i class="fa fa-list-ul"></i> <span class="categories">{{ post.categories | join: ', ' }}</span><br>
+          <i class="fa fa-calendar"></i> <span class="date">{{ post.date | date: "%-d %B %Y" }}</span>
         </p>
       </li>
     {% endfor %}
-    </ul>
-  </div>
-  <div class="small-4 columns">
-    <ul class="unadorned">
-      <li><i class="fa fa-info-circle"></i> <a href="#">about</a></li>
-      <li><i class="fa fa-rss-square"></i> <a href="{{ "/feed.xml" | prepend: site.baseurl }}">subscribe</a></li>
-      <li><i class="fa fa-github-square"></i> <a href="https://github.com/{{ site.github_username }}">{{ site.github_username}}</a></li>
-      <li><i class="fa fa-twitter-square"></i> <a href="https://twitter.com/{{ site.twitter_username }}">{{ site.twitter_username }}</a></li>
-      <li><i class="fa fa-google-plus-square"></i> <a href="https://plus.google.com/+TadThorley">Tad Thorley</a></li>
-      <li><i class="fa fa-external-link-square"></i> <a href="http://tadthorley.com/">TadThorley.com</a></li>
     </ul>
   </div>
 </div>

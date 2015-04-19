@@ -21,6 +21,8 @@ $dark-gray   : #434A54;
   pre {
     code {
       font-family: "Fira Mono", monospace !important;
+      background: $dark-gray;
+      color: $light-gray;
     }
   }
   color: $medium-gray;

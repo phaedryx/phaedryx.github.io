@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     
     <title>Phaedryx - Main</title>
-    <link href='http://fonts.googleapis.com/css?family=Fira+Sans:400,700,400italic|Playfair+Display:400,700,400italic,700italic|Fira+Mono' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Playfair+Display|Fira+Mono|Open+Sans:400italic,400,600' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="/foundation/app.css" />
     <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
     <script src="/foundation/js/vendor/modernizr.js"></script>
@@ -13,75 +13,82 @@
   <body>
     <section role="main" class="scroll-container">
       <div class="row">
-        <div id="page" class="small-12 columns">
+        <div id="page" class="small-9 small-centered columns">
           <div class="row">
-  <div id="logo" class="small-2 columns">
-    <a href="/"><img src="/assets/logo.png"></a>
-  </div>
-  <div id="nav" class="small-8 columns post-padding">
-    <a href="#">nav elem</a>&nbsp;
-    <a href="#">nav elem</a>&nbsp;
-    <a href="#">nav elem</a>
-  </div>
-  <div class="small-2 columns">
-
+  <div id="nav" class="small-12 columns center">
+    <a href="/"><i class="fa fa-home"></i></a>
   </div>
 </div>
 
-          <div class="row">
-  <div class="small-8 columns">
-    <h2>Articles</h2>
+          <div class="small-12 columns fulljustify">
+  <i class="fa fa-google-plus-square"></i> <a href="https://plus.google.com/+TadThorley">Tad Thorley</a>&nbsp;&nbsp;
+  <i class="fa fa-external-link-square"></i> <a href="http://tadthorley.com/">TadThorley.com</a>&nbsp;&nbsp;
+  <i class="fa fa-info-circle"></i> <a href="#">about</a>&nbsp;&nbsp;
+  <i class="fa fa-rss-square"></i> <a href="/feed.xml">subscribe</a>&nbsp;&nbsp;
+  <i class="fa fa-github-square"></i> <a href="https://github.com/phaedryx">phaedryx</a>&nbsp;&nbsp;
+  <i class="fa fa-twitter-square"></i> <a href="https://twitter.com/phaedryx">phaedryx</a>
+</div>
+<div class="row">
+  <div class="small-12 columns">
+    <h1>Articles</h1>
     <ul class="unadorned">
+    
+      <li>
+        <h3><a href="/2015/04/01/sample-article">A Sample Post Title</a></h3>
+        <p>
+          A simple article to test layout, typography, and markdown
+          <br>
+          <i class="fa fa-list-ul"></i> <span class="categories">layout, typography, markdown</span><br>
+          <i class="fa fa-calendar"></i> <span class="date">1 April 2015</span>
+        </p>
+      </li>
     
       <li>
         <h3><a href="/2015/03/01/mukluk-a-dark-theme-for-pygments">Mukluk: A Dark Theme For Pygments</a></h3>
         <p>
-          Mukluk is a dark pygments/rouge theme created for my Jekyll blog
+          Mukluk is a dark pygments/rouge theme created for my Jekyll blog. It has support for multiple programming languages.
           <br>
-          <small><i class="fa fa-calendar"></i> Mar 1, 2015</small>
-          &nbsp; &nbsp;
-          <small><i class="fa fa-list-ul"></i> bootflat, jekyll, pygments, rouge, theme</small>
+          <i class="fa fa-list-ul"></i> <span class="categories">bootflat, jekyll, pygments, rouge, theme</span><br>
+          <i class="fa fa-calendar"></i> <span class="date">1 March 2015</span>
         </p>
       </li>
     
     </ul>
   </div>
-  <div class="small-4 columns">
-    <ul class="unadorned">
-      <li><i class="fa fa-info-circle"></i> <a href="#">about</a></li>
-      <li><i class="fa fa-rss-square"></i> <a href="/feed.xml">subscribe</a></li>
-      <li><i class="fa fa-github-square"></i> <a href="https://github.com/phaedryx">phaedryx</a></li>
-      <li><i class="fa fa-twitter-square"></i> <a href="https://twitter.com/phaedryx">phaedryx</a></li>
-      <li><i class="fa fa-google-plus-square"></i> <a href="https://plus.google.com/+TadThorley">Tad Thorley</a></li>
-      <li><i class="fa fa-external-link-square"></i> <a href="http://tadthorley.com/">TadThorley.com</a></li>
-    </ul>
-  </div>
 </div>
 
           <div id="footer" class="row">
-  <div class="small-offset-1 small-11 columns">
-    <div class="row post-padding">
-      <hr>
-      <div class="small-3 columns">
-        <ul class="unadorned">
-          <li>Tad Thorley</li>
-          <li>webby goodness</li>
-        </ul>
-      </div>
-      <div class="small-7 columns">
-        This work is licensed under a
-        <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">
-          Creative Commons Attribution-ShareAlike 4.0 International License
-        </a>.
-      </div>
-      <div class="small-2 columns">
-        <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">
-          <img align="right" alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png" />
-        </a>
-      </div>
-    </div>
+  <div class="small-12 columns center">
+    <img src="/assets/flourish.png" width="400"/>
   </div>
 </div>
+<br>
+<br>
+<br>
+<div class="row">
+  <div class="small-5 columns">
+    <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">
+      <img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png" />
+    </a>
+  </div>
+  <div class="small-2 columns center">
+    <a href="/"><img src="/assets/logo.png" /></a>
+  </div>
+  <div class="small-5 columns right">
+    Tad Thorley<br>
+    webby goodness
+  </div>
+</div>
+<br>
+<div class="row">
+  <div class="small-12 columns center small">
+    This work is licensed under a
+    <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">
+      Creative Commons Attribution-ShareAlike 4.0 International License
+    </a>
+  </div>
+</div>
+<br>
 <br>
 
         </div>

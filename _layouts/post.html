@@ -2,29 +2,18 @@
 layout: default
 ---
 <div class="row">
-  <div class="small-2 columns">
-    &nbsp;
-  </div>
-  <div class="small-8 columns">
-    <h1 class="title">{{ page.title }}</h1>
-  </div>
-  <div class="small-2 columns">
-    &nbsp;
+  <!-- <div class="date">
+    <div class="month">{{ page.date | date: "%b" }}</div>
+    <div class="day">{{ page.date | date: "%-d" }}</div>
+    <div class="year">{{ page.date | date: "%Y" }}</div>
+  </div> -->
+  <div class="small-12 columns">
+    <div id="post-date">{{ page.date | date: "%-d %B %Y"}}</div>
+    <h1 class="post-title">{{ page.title }}</h1>
   </div>
 </div>
 <div class="row">
-  <div class="small-2 columns">
-    <div class="date">
-      <div class="month">{{ page.date | date: "%b" }}</div>
-      <div class="day">{{ page.date | date: "%-d" }}</div>
-      <div class="year">{{ page.date | date: "%Y" }}</div>
-    </div>
-    <!-- <p class="post-meta">{{ page.date | date: "%b %-d, %Y" }}{% if page.author %} • {{ page.author }}{% endif %}{% if page.meta %} • {{ page.meta }}{% endif %}</p> -->
-  </div>
-  <div class="small-8 columns">
+  <div class="small-12 columns">
     {{ content }}
-  </div>
-  <div class="small-2 columns">
-    &nbsp;
   </div>
 </div>
