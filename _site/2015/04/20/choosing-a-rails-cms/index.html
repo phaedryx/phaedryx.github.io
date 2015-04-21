@@ -1,0 +1,132 @@
+<!doctype html>
+<html class="no-js" lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    
+    <title>Phaedryx - Choosing a Rails CMS</title>
+    <link href='http://fonts.googleapis.com/css?family=Playfair+Display|Fira+Mono|Open+Sans:400italic,400,600' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="/foundation/app.css" />
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+    <script src="/foundation/js/vendor/modernizr.js"></script>
+  </head>
+  <body>
+    <section role="main" class="scroll-container">
+      <div class="row">
+        <div id="page" class="small-9 small-centered columns">
+          <div class="row">
+  <div id="nav" class="small-12 columns center">
+    <a href="https://github.com/phaedryx" title="github profile">
+      <i class="fa fa-github-square"></i>
+    </a>
+    <a href="https://twitter.com/phaedryx" title="twitter profile">
+      <i class="fa fa-twitter-square"></i>
+    </a>
+    <a href="https://plus.google.com/+TadThorley" title="google plus profile">
+      <i class="fa fa-google-plus-square"></i>
+    </a>
+    <a class="home" href="/" title="home">
+      <i class="fa fa-home"></i>
+    </a>
+    <a href="/about" title="about">
+      <i class="fa fa-info-circle"></i>
+    </a>
+    <a href="http://tadthorley.com/" title="tadthorley.com">
+      <i class="fa fa-external-link-square"></i>
+    </a>
+    <a href="/feed.xml" title="rss feed">
+      <i class="fa fa-rss-square"></i>
+    </a>
+  </div>
+</div>
+
+          <div class="row">
+  <!-- <div class="date">
+    <div class="month">Apr</div>
+    <div class="day">20</div>
+    <div class="year">2015</div>
+  </div> -->
+  <div class="small-12 columns">
+    <div class="date">20 April 2015</div>
+    <h1 class="post-title">Choosing a Rails CMS</h1>
+  </div>
+</div>
+<div class="row">
+  <div class="small-12 columns">
+    <p>I recently started a new job as the web team lead on the for a
+marketing firm. The entire team is fairly new to the company so we are making
+decisions about what workflows to develop and which tools to use. We decided
+that in order to keep up with requirements, we would need to leverage existing
+software instead of creating every website from scratch. For us, that meant
+finding a good CMS that met our needs.</p>
+
+<p>We established the following criteria:</p>
+
+<ol>
+  <li>It must be open source (code we can see and modify)</li>
+  <li>It must be up-to-date (currently Ruby on Rails 4 and Ruby 2)</li>
+  <li>It must be flexible (e.g. mountable as an engine or used for an entire site)</li>
+  <li>It must be intuitive for non-developers to admin</li>
+  <li>It must be supported by a company who’s needs reflect our own.</li>
+</ol>
+
+<p>The last point is especially important because we didn’t want to be working at
+cross-purposes. For example, if a company behind a CMS made most of their money
+from hosting their CMS, they would have no motivation to make their CMS easy to
+configure and install; in fact the opposite is true. We, however, need to be
+able to quickly get our websites set up.</p>
+
+<p>We made a list of candidates based on searches and the <a href="https://www.ruby-toolbox.com/categories/content_management_systems">CMS list on the Ruby Toolbox</a>.
+<a href="https://github.com/radiant/radiant/">Radiant</a> looked promising, but we found it
+woefully outdated (Rails 2.3). <a href="https://github.com/locomotivecms/engine">Locomotive</a>
+was interesting, but had a lot of setup overhead.
+<a href="https://github.com/comfy/comfortable-mexican-sofa">Comfortable Mexican Sofa</a> had
+a lot of the things we were looking for, but, ultimately,
+<a href="http://alchemy-cms.com/about">Alchemy</a> was the only one that met all of our
+criteria.</p>
+
+<p>Alchemy is <a href="https://github.com/AlchemyCMS/alchemy_cms">open source</a>, is up-to-date,
+is mountable as an engine, is intuitive for our users, and is backed by a company,
+<a href="https://magiclabs.de/en/home">Magic Labs</a> that has needs similar to our own.
+The most apparent drawback is the modest documentation, but <a href="http://www.rubydoc.info/github/magiclabs/alchemy_cms/index">the code</a> has decent comments.
+Overall, it is a good fit for us.</p>
+
+<p>Lastly, I decided to test the waters by <a href="https://github.com/AlchemyCMS/alchemy_cms/pull/760">submitting a pull request</a>. They were friendly
+and supportive, but requested some tests before they merged it. Perfect.</p>
+
+    <br>
+    <div class="license center">
+      This work is licensed under a
+      <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">
+      Creative Commons Attribution-ShareAlike 4.0 International License
+      </a>
+    </div>
+    <br>
+  </div>
+</div>
+
+          <div class="row">
+  <div class="small-12 columns center">
+    <img src="/assets/flourish.svg" />
+  </div>
+</div>
+<br>
+<div id="footer" class="row">
+  <div class="small-12 columns center">
+    Tad Thorley<br>
+    <br>
+    <a href="/"><img src="/assets/logo.png" /></a>
+  </div>
+</div>
+<br>
+<br>
+
+        </div>
+      </div>
+    </section>
+    <script src="/foundation/js/vendor/jquery.js"></script>
+    <script src="/foundation/js/vendor/fastclick.js"></script>
+    <script src="/foundation/js/foundation.min.js"></script>
+    <script>$(document).foundation();</script>
+  </body>
+</html>

@@ -5,9 +5,67 @@
     <description>webby goodness</description>
     <link>/</link>
     <atom:link href="/feed.xml" rel="self" type="application/rss+xml" />
-    <pubDate>Mon, 20 Apr 2015 22:09:22 -0600</pubDate>
-    <lastBuildDate>Mon, 20 Apr 2015 22:09:22 -0600</lastBuildDate>
+    <pubDate>Mon, 20 Apr 2015 23:28:45 -0600</pubDate>
+    <lastBuildDate>Mon, 20 Apr 2015 23:28:45 -0600</lastBuildDate>
     <generator>Jekyll v2.4.0</generator>
+    
+      <item>
+        <title>Choosing a Rails CMS</title>
+        <description>&lt;p&gt;I recently started a new job as the web team lead on the for a
+marketing firm. The entire team is fairly new to the company so we are making
+decisions about what workflows to develop and which tools to use. We decided
+that in order to keep up with requirements, we would need to leverage existing
+software instead of creating every website from scratch. For us, that meant
+finding a good CMS that met our needs.&lt;/p&gt;
+
+&lt;p&gt;We established the following criteria:&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;It must be open source (code we can see and modify)&lt;/li&gt;
+  &lt;li&gt;It must be up-to-date (currently Ruby on Rails 4 and Ruby 2)&lt;/li&gt;
+  &lt;li&gt;It must be flexible (e.g. mountable as an engine or used for an entire site)&lt;/li&gt;
+  &lt;li&gt;It must be intuitive for non-developers to admin&lt;/li&gt;
+  &lt;li&gt;It must be supported by a company who’s needs reflect our own.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;The last point is especially important because we didn’t want to be working at
+cross-purposes. For example, if a company behind a CMS made most of their money
+from hosting their CMS, they would have no motivation to make their CMS easy to
+configure and install; in fact the opposite is true. We, however, need to be
+able to quickly get our websites set up.&lt;/p&gt;
+
+&lt;p&gt;We made a list of candidates based on searches and the &lt;a href=&quot;https://www.ruby-toolbox.com/categories/content_management_systems&quot;&gt;CMS list on the Ruby Toolbox&lt;/a&gt;.
+&lt;a href=&quot;https://github.com/radiant/radiant/&quot;&gt;Radiant&lt;/a&gt; looked promising, but we found it
+woefully outdated (Rails 2.3). &lt;a href=&quot;https://github.com/locomotivecms/engine&quot;&gt;Locomotive&lt;/a&gt;
+was interesting, but had a lot of setup overhead.
+&lt;a href=&quot;https://github.com/comfy/comfortable-mexican-sofa&quot;&gt;Comfortable Mexican Sofa&lt;/a&gt; had
+a lot of the things we were looking for, but, ultimately,
+&lt;a href=&quot;http://alchemy-cms.com/about&quot;&gt;Alchemy&lt;/a&gt; was the only one that met all of our
+criteria.&lt;/p&gt;
+
+&lt;p&gt;Alchemy is &lt;a href=&quot;https://github.com/AlchemyCMS/alchemy_cms&quot;&gt;open source&lt;/a&gt;, is up-to-date,
+is mountable as an engine, is intuitive for our users, and is backed by a company,
+&lt;a href=&quot;https://magiclabs.de/en/home&quot;&gt;Magic Labs&lt;/a&gt; that has needs similar to our own.
+The most apparent drawback is the modest documentation, but &lt;a href=&quot;http://www.rubydoc.info/github/magiclabs/alchemy_cms/index&quot;&gt;the code&lt;/a&gt; has decent comments.
+Overall, it is a good fit for us.&lt;/p&gt;
+
+&lt;p&gt;Lastly, I decided to test the waters by &lt;a href=&quot;https://github.com/AlchemyCMS/alchemy_cms/pull/760&quot;&gt;submitting a pull request&lt;/a&gt;. They were friendly
+and supportive, but requested some tests before they merged it. Perfect.&lt;/p&gt;
+</description>
+        <pubDate>Mon, 20 Apr 2015 00:00:00 -0600</pubDate>
+        <link>/2015/04/20/choosing-a-rails-cms</link>
+        <guid isPermaLink="true">/2015/04/20/choosing-a-rails-cms</guid>
+        
+        
+        <category>ruby</category>
+        
+        <category>rails</category>
+        
+        <category>cms</category>
+        
+        <category>engine</category>
+        
+      </item>
     
       <item>
         <title>Mukluk: A Dark Theme For Pygments</title>
