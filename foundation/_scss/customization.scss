@@ -9,12 +9,18 @@ body {
   margin-bottom: 2em;
   a {
     padding: 1em;
-    font-size: 2rem;
+    font-size: 1.8rem;
     color: $gray6;
+  }
+  a.home {
+    font-size: 3.2rem;
   }
   a:hover {
     color: $blue-jeans;
   }
+}
+#footer {
+  font-size: 1.2rem;
 }
 .date {
   text-transform: uppercase;
