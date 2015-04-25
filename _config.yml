@@ -12,6 +12,7 @@ author: Tad Thorley
 description: webby goodness
 twitter_username: phaedryx
 github_username: phaedryx
+paginate: 5
 
 # theme
 foundation:
