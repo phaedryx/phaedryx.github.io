@@ -12,6 +12,7 @@ body {
     margin-right: 1em;
     padding: 0 0.5em;
     font-size: 1.6em;
+    border-bottom: 3px solid $gray4;
 
     img {
       height: 1.5em;
@@ -63,7 +64,7 @@ body {
 }
 .date {
   text-transform: uppercase;
-  font-size: 0.75em;
+  font-size: 0.8em;
 }
 .categories {
   font-size: 0.75em;
