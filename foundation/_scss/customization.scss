@@ -30,6 +30,9 @@ body {
     padding: 0;
   }
 }
+.post-title {
+  margin-bottom: 1.2rem;
+}
 @media #{$medium-only} {
   #nav {
     text-align: center;
@@ -64,7 +67,7 @@ body {
 }
 .date {
   text-transform: uppercase;
-  font-size: 0.8em;
+  font-size: 0.9rem;
 }
 .categories {
   font-size: 0.75em;
