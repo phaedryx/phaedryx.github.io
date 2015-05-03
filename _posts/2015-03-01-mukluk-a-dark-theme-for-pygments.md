@@ -39,7 +39,7 @@ $dark-gray   : #434A54;
 
 .highlight {
   color: $medium-gray;
-  line-height: 1.2em;
+  line-height: 1.4em;
   background: $dark-gray;
   border-radius: 5px;
   padding: 1em;

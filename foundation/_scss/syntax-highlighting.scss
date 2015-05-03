@@ -20,13 +20,13 @@ $dark-gray   : #434A54;
 .highlight {
   pre {
     code {
-      font-family: "Fira Mono", monospace !important;
+      font-family: "Source Code Pro", monospace !important;
       background: $dark-gray;
       color: $light-gray;
     }
   }
   color: $medium-gray;
-  line-height: 1.2em;
+  line-height: 1.4em;
   background: $dark-gray;
   border-radius: 5px;
   border-right: 1px solid #000;
