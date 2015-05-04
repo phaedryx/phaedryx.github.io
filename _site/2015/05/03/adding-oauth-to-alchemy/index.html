@@ -1,0 +1,189 @@
+<!doctype html>
+<html class="no-js" lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    
+    <title>Phaedryx - Adding OAuth to Alchemy CMS</title>
+    <link href='http://fonts.googleapis.com/css?family=Playfair+Display|Source+Code+Pro:400|Open+Sans:400italic,400,600' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="/foundation/app.css" />
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+    <script src="/foundation/js/vendor/modernizr.js"></script>
+  </head>
+  <body>
+    <section role="main" class="scroll-container">
+      <div id="container" class="row">
+        <div id="page" class="small-9 small-centered columns">
+          <div class="row">
+  <div id="nav" class="small-12 columns">
+    <a href="/" id="logo"><img src="/assets/logo.png"></a>
+  
+    <a href="/explanations">explanations</a>
+    <a href="/elsewhere">elsewhere</a>
+    <a href="/feed.xml" title="rss feed">feed&nbsp;<i class="fa fa-rss-square"></i></a>
+  
+  </div>
+</div>
+
+          <div class="row">
+  <div class="small-12 columns">
+    <div class="date">3 May 2015</div>
+    <h1 class="post-title">Adding OAuth to Alchemy CMS</h1>
+  </div>
+</div>
+<div class="row">
+  <div class="small-12 columns">
+    <p>We have a project at work built on the Alchemy CMS. One of our needs for the
+project is to allow users sign in at the “member” level using third party
+OAuth credentials from companies like Facebook and Google. Because we are also
+using the <code>alchemy-devise</code> gem, using Omniauth seemed like a natural choice, but
+it took a little effort to get it working.</p>
+
+<p>The <code>alchemy-devise</code> gem provides a lot of setup and things that you get from
+devise already. It is part of the <code>Alchemy::User</code> model. You just need to add a
+couple more columns to track the <code>uid</code> and name of the OAuth <code>provider</code>. The
+migration looks like this:</p>
+
+<div class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="c1"># db/migrate/..._add_columns_to_alchemy_users.rb</span>
+<span class="k">class</span> <span class="nc">AddColumnsToAlchemyUsers</span> <span class="o">&lt;</span> <span class="no">ActiveRecord</span><span class="o">::</span><span class="no">Migration</span>
+  <span class="k">def</span> <span class="nf">change</span>
+    <span class="n">add_column</span> <span class="ss">:alchemy_users</span><span class="p">,</span> <span class="ss">:uid</span><span class="p">,</span> <span class="ss">:string</span>
+    <span class="n">add_column</span> <span class="ss">:alchemy_users</span><span class="p">,</span> <span class="ss">:provider</span><span class="p">,</span> <span class="ss">:string</span>
+  <span class="k">end</span>
+<span class="k">end</span></code></pre></div>
+
+<p>Next, add OAuth providers. This example uses Facebook and Google, but there are
+many <a href="https://github.com/intridea/omniauth/wiki/List-of-Strategies">provider strategies</a>
+that you can choose from.</p>
+
+<div class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="c1"># Gemfile</span>
+<span class="c1"># ...</span>
+
+<span class="n">gem</span> <span class="s1">&#39;omniauth-facebook&#39;</span>
+<span class="n">gem</span> <span class="s1">&#39;omniauth-google-oauth2&#39;</span>
+
+<span class="c1"># ...</span></code></pre></div>
+
+<p>OAuth requires that you send a user to a provider who then redirects back to
+your site. This requires some setup on the provider’s side beforehand. You can
+go to the <a href="https://developers.facebook.com/docs/facebook-login/">Facebook developer area</a>
+to set up an app for Facebook and the <a href="https://console.developers.google.com/">Google developer console</a>
+to set up an app for Google. You will need two character strings for verification.
+These are often called the “app ID” and “app secret”. They are part of the
+configuration you need in your devise initializer. “But wait!”, you’re saying
+to yourself, how does the user model know about omniauth? The answer is that it
+needs to be added to the <code>Alchemy::User</code> model. If you try to create an
+<code>Alchemy::User</code> model in your Rails application it will clobber (replace) the
+one from the <code>alchemy-devise</code> gem. A better approach is to add the devise
+omniauthable functionality in an initializer. One place this can be done is in
+the same place you are adding the credentials in the devise.rb initializer. In
+the end the file will have this added to it:</p>
+
+<div class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="c1"># config/initializers/devise.rb</span>
+<span class="c1"># ...</span>
+
+<span class="no">Alchemy</span><span class="o">::</span><span class="no">User</span><span class="o">.</span><span class="n">class_exec</span> <span class="p">{</span>
+  <span class="n">devise</span> <span class="ss">:omniauthable</span><span class="p">,</span> <span class="ss">:omniauth_providers</span> <span class="o">=&gt;</span> <span class="o">[</span><span class="ss">:facebook</span><span class="p">,</span> <span class="ss">:google_oauth2</span><span class="o">]</span>
+
+  <span class="k">def</span> <span class="nc">self</span><span class="o">.</span><span class="nf">from_omniauth</span><span class="p">(</span><span class="n">auth</span><span class="p">)</span>
+    <span class="n">where</span><span class="p">(</span><span class="ss">provider</span><span class="p">:</span> <span class="n">auth</span><span class="o">.</span><span class="n">provider</span><span class="p">,</span> <span class="ss">uid</span><span class="p">:</span> <span class="n">auth</span><span class="o">.</span><span class="n">uid</span><span class="p">)</span><span class="o">.</span><span class="n">first_or_create</span> <span class="k">do</span> <span class="o">|</span><span class="n">user</span><span class="o">|</span>
+      <span class="n">user</span><span class="o">.</span><span class="n">email</span> <span class="o">=</span> <span class="n">auth</span><span class="o">.</span><span class="n">info</span><span class="o">.</span><span class="n">email</span>
+      <span class="n">user</span><span class="o">.</span><span class="n">password</span> <span class="o">=</span> <span class="no">Devise</span><span class="o">.</span><span class="n">friendly_token</span><span class="o">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">20</span><span class="o">]</span>
+    <span class="k">end</span>
+  <span class="k">end</span>
+<span class="p">}</span>
+
+<span class="n">config</span><span class="o">.</span><span class="n">omniauth</span> <span class="ss">:facebook</span><span class="p">,</span> <span class="s1">&#39;&lt;app_id&gt;&#39;</span><span class="p">,</span> <span class="s1">&#39;&lt;app_secret&gt;&#39;</span>
+<span class="n">config</span><span class="o">.</span><span class="n">omniauth</span> <span class="ss">:google_oauth2</span><span class="p">,</span> <span class="s1">&#39;&lt;app_id&gt;&#39;</span><span class="p">,</span> <span class="s1">&#39;&lt;app_secret&gt;&#39;</span>
+
+<span class="c1"># ...</span></code></pre></div>
+
+<p>Not that a class method <code>.from_omniauth</code> is also being added. That will be used
+in the next step.</p>
+
+<p>Now that the user model has been modified to use omniauth and the configuration
+for the providers is in place, you need to have code to handle the users who are
+redirected back. This requires that you create omniauth callbacks. The code
+looks like this:</p>
+
+<div class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="c1"># app/controllers/alchemy/omniauth_callbacks_controller.rb</span>
+<span class="k">class</span> <span class="nc">Alchemy</span><span class="o">::</span><span class="no">OmniauthCallbacksController</span> <span class="o">&lt;</span> <span class="no">Devise</span><span class="o">::</span><span class="no">OmniauthCallbacksController</span>
+  <span class="k">def</span> <span class="nf">facebook</span>
+    <span class="vi">@user</span> <span class="o">=</span> <span class="no">Alchemy</span><span class="o">::</span><span class="no">User</span><span class="o">.</span><span class="n">from_omniauth</span><span class="p">(</span><span class="n">request</span><span class="o">.</span><span class="n">env</span><span class="o">[</span><span class="s2">&quot;omniauth.auth&quot;</span><span class="o">]</span><span class="p">)</span>
+
+    <span class="n">sign_in_and_redirect</span> <span class="vi">@user</span><span class="p">,</span> <span class="ss">:event</span> <span class="o">=&gt;</span> <span class="ss">:authentication</span>
+  <span class="k">end</span>
+
+  <span class="k">def</span> <span class="nf">google_oauth2</span>
+    <span class="vi">@user</span> <span class="o">=</span> <span class="no">Alchemy</span><span class="o">::</span><span class="no">User</span><span class="o">.</span><span class="n">from_omniauth</span><span class="p">(</span><span class="n">request</span><span class="o">.</span><span class="n">env</span><span class="o">[</span><span class="s2">&quot;omniauth.auth&quot;</span><span class="o">]</span><span class="p">)</span>
+
+    <span class="n">sign_in_and_redirect</span> <span class="vi">@user</span><span class="p">,</span> <span class="ss">:event</span> <span class="o">=&gt;</span> <span class="ss">:authentication</span>
+  <span class="k">end</span>
+<span class="k">end</span></code></pre></div>
+
+<p>Note that each methd is named after its associated provider. The code in this
+case is identical for each method and could be refactored into a single method.</p>
+
+<p>Now that the callbacks can be handled, they need routes pointing to them. This
+should be added to your routes file:</p>
+
+<div class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="c1"># config/routes.rb</span>
+<span class="c1"># ...</span>
+
+<span class="n">devise_for</span> <span class="ss">:user</span><span class="p">,</span>
+  <span class="ss">class_name</span><span class="p">:</span> <span class="s1">&#39;Alchemy::User&#39;</span><span class="p">,</span>
+  <span class="ss">controllers</span><span class="p">:</span> <span class="p">{</span>
+    <span class="ss">sessions</span><span class="p">:</span> <span class="s1">&#39;alchemy/user_sessions&#39;</span><span class="p">,</span>
+    <span class="ss">:omniauth_callbacks</span> <span class="o">=&gt;</span> <span class="s2">&quot;alchemy/omniauth_callbacks&quot;</span>
+  <span class="p">},</span>
+  <span class="ss">skip</span><span class="p">:</span> <span class="o">[</span><span class="ss">:sessions</span><span class="p">,</span> <span class="ss">:passwords</span><span class="o">]</span>
+
+<span class="c1"># ...</span></code></pre></div>
+
+<p>This is very close to the routes in the <code>alchemy-devise</code> gem.</p>
+
+<p>Lastly, you need to provide a way for users to sign in. Here is an example
+partial that can be included in site pages:</p>
+
+<div class="highlight"><pre><code class="language-erb" data-lang="erb"><span class="cp">&lt;%#</span><span class="c"> app/views/shared/_sign_in.html.erb </span><span class="cp">%&gt;</span><span class="x"></span>
+<span class="cp">&lt;%</span> <span class="k">if</span> <span class="n">current_alchemy_user</span> <span class="cp">%&gt;</span><span class="x"></span>
+<span class="x">  Signed in as </span><span class="cp">&lt;%=</span> <span class="n">current_alchemy_user</span><span class="o">.</span><span class="n">email</span> <span class="cp">%&gt;</span><span class="x"> via </span><span class="cp">&lt;%=</span> <span class="n">current_alchemy_user</span><span class="o">.</span><span class="n">provider</span><span class="o">.</span><span class="n">titleize</span> <span class="cp">%&gt;</span><span class="x"></span>
+<span class="x">  </span><span class="cp">&lt;%=</span> <span class="n">link_to</span> <span class="s2">&quot;Sign Out&quot;</span><span class="p">,</span> <span class="n">logout_path</span><span class="p">,</span> <span class="nb">method</span><span class="p">:</span> <span class="ss">:delete</span> <span class="cp">%&gt;</span><span class="x"></span>
+<span class="cp">&lt;%</span> <span class="k">else</span> <span class="cp">%&gt;</span><span class="x"></span>
+<span class="x">  </span><span class="cp">&lt;%=</span> <span class="n">link_to</span> <span class="s2">&quot;Sign in with Facebook&quot;</span><span class="p">,</span> <span class="n">user_omniauth_authorize_path</span><span class="p">(</span><span class="ss">:facebook</span><span class="p">)</span> <span class="cp">%&gt;</span><span class="x"></span>
+<span class="x">  </span><span class="cp">&lt;%=</span> <span class="n">link_to</span> <span class="s2">&quot;Sign in with Google&quot;</span><span class="p">,</span> <span class="n">user_omniauth_authorize_path</span><span class="p">(</span><span class="ss">:google_oauth2</span><span class="p">)</span> <span class="cp">%&gt;</span><span class="x"></span>
+<span class="cp">&lt;%</span> <span class="k">end</span> <span class="cp">%&gt;</span><span class="x"></span></code></pre></div>
+
+<p>Overall, a convenient way to allow people to sign in to your Alchemy-based site.</p>
+
+  </div>
+</div>
+
+          <div class="row">
+  <div class="small-12 columns center">
+    <img src="/assets/hr.svg" />
+  </div>
+</div>
+<div id="footer" class="row">
+  <div class="small-12 columns center">
+    <div class="license center">
+      This work is licensed under a
+      <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">
+      Creative Commons Attribution-ShareAlike 4.0 International License
+    </a><br>
+      Tad Thorley
+    </div>
+  </div>
+</div>
+<br>
+<br>
+
+        </div>
+      </div>
+    </section>
+    <script src="/foundation/js/vendor/jquery.js"></script>
+    <script src="/foundation/js/vendor/fastclick.js"></script>
+    <script src="/foundation/js/foundation.min.js"></script>
+    <script>$(document).foundation();</script>
+  </body>
+</html>
