@@ -8,7 +8,7 @@ $include-html-type-classes: $include-html-classes !default;
 
 // We use these to control header font styles
 // $header-font-family: $body-font-family !default;
-$header-font-family: "Playfair Display" !default;
+$header-font-family: "Oswald" !default;
 $header-font-weight: $font-weight-normal !default;
 $header-font-style: $font-weight-normal !default;
 //$header-font-style: italic !default;
@@ -57,13 +57,14 @@ $paragraph-aside-font-style: italic !default;
 $paragraph-text-rendering: optimizeLegibility !default;
 
 // We use these to style <code> tags
-$code-color: $grapefruit !default;
+$code-color: $gray6 !default;
 $code-font-family: $font-family-monospace !default;
 $code-font-weight: $font-weight-normal !default;
-$code-background-color: scale-color($grapefruit, $lightness: 90%) !default;
+// $code-background-color: scale-color($gray1, $lightness: 90%) !default;
+$code-background-color: $gray2;
 $code-border-size: 0px !default;
 $code-border-style: solid !default;
-$code-border-color: scale-color($code-background-color, $lightness: -10%) !default;
+$code-border-color: scale-color($code-color, $lightness: 10%) !default;
 $code-padding: rem-calc(2) rem-calc(5) rem-calc(1) !default;
 
 // We use these to style anchors
