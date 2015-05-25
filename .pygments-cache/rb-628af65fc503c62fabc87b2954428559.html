@@ -1,0 +1,34 @@
+<div class="highlight"><pre><span class="c1"># ruby</span>
+<span class="k">module</span> <span class="nn">Foo</span>
+  <span class="k">def</span> <span class="nf">foo</span>
+    <span class="nb">puts</span> <span class="s2">&quot;foo&quot;</span>
+  <span class="k">end</span>
+<span class="k">end</span>
+
+<span class="k">class</span> <span class="nc">Bar</span> <span class="o">&lt;</span> <span class="no">Baz</span>
+  <span class="kp">include</span> <span class="no">Foo</span>
+  <span class="kp">attr</span> <span class="ss">:quux</span>
+
+  <span class="k">def</span> <span class="nf">initialize</span><span class="p">(</span><span class="n">options</span><span class="p">)</span>
+    <span class="vi">@options</span> <span class="o">=</span> <span class="n">options</span> <span class="o">||</span> <span class="p">{}</span>
+  <span class="k">end</span>
+
+  <span class="k">def</span> <span class="nf">types</span>
+    <span class="n">num</span> <span class="o">=</span> <span class="mi">10_000</span>
+    <span class="n">ber</span> <span class="o">=</span> <span class="mi">1234</span><span class="o">.</span><span class="mi">5678</span>
+    <span class="mi">3</span><span class="o">.</span><span class="n">times</span> <span class="k">do</span>
+      <span class="nb">puts</span> <span class="n">num</span>
+    <span class="k">end</span>
+    <span class="n">string</span> <span class="o">=</span> <span class="s2">&quot;Hello World&quot;</span>
+    <span class="n">range</span>  <span class="o">=</span> <span class="s1">&#39;a&#39;</span><span class="o">.</span><span class="n">.</span><span class="s1">&#39;z&#39;</span>
+    <span class="n">regex</span>  <span class="o">=</span> <span class="sr">/foobar/</span>
+  <span class="k">end</span>
+
+  <span class="kp">private</span>
+
+  <span class="k">def</span> <span class="nf">collections</span>
+    <span class="n">ages</span>         <span class="o">=</span> <span class="p">{</span><span class="ss">bob</span><span class="p">:</span> <span class="mi">20</span><span class="p">,</span> <span class="ss">bill</span><span class="p">:</span> <span class="mi">32</span><span class="p">,</span> <span class="ss">jane</span><span class="p">:</span> <span class="mi">19</span><span class="p">}</span>
+    <span class="n">hash_rockets</span> <span class="o">=</span> <span class="p">{</span><span class="ss">:foo</span> <span class="o">=&gt;</span> <span class="s2">&quot;bar&quot;</span><span class="p">,</span> <span class="ss">:baz</span> <span class="o">=&gt;</span> <span class="s2">&quot;quux&quot;</span><span class="p">}</span>
+  <span class="k">end</span>
+<span class="k">end</span>
+</pre></div>

@@ -1,0 +1,90 @@
+<div class="highlight"><pre><span class="cm">/**</span>
+<span class="cm"> * Syntax highlighting styles</span>
+<span class="cm">   Mukluk, based on bootflat</span>
+<span class="cm">   https://bootflat.github.io/documentation.html</span>
+<span class="cm"> */</span>
+<span class="nv">$blue-jeans</span><span class="o">  :</span> <span class="mh">#5D9CEC</span><span class="p">;</span>
+<span class="nv">$aqua</span><span class="o">        :</span> <span class="mh">#4FC1E9</span><span class="p">;</span>
+<span class="nv">$mint</span><span class="o">        :</span> <span class="mh">#48CFAD</span><span class="p">;</span>
+<span class="nv">$grass</span><span class="o">       :</span> <span class="mh">#A0D468</span><span class="p">;</span>
+<span class="nv">$sunflower</span><span class="o">   :</span> <span class="mh">#FFCE54</span><span class="p">;</span>
+<span class="nv">$bittersweet</span><span class="o"> :</span> <span class="mh">#FC6E51</span><span class="p">;</span>
+<span class="nv">$grapefruit</span><span class="o">  :</span> <span class="mh">#ED5565</span><span class="p">;</span>
+<span class="nv">$lavendar</span><span class="o">    :</span> <span class="mh">#AC92EC</span><span class="p">;</span>
+<span class="nv">$pink-rose</span><span class="o">   :</span> <span class="mh">#EC87C0</span><span class="p">;</span>
+<span class="nv">$light-gray</span><span class="o">  :</span> <span class="mh">#F5F7FA</span><span class="p">;</span>
+<span class="nv">$medium-gray</span><span class="o"> :</span> <span class="mh">#CCD1D9</span><span class="p">;</span>
+<span class="nv">$gray</span><span class="o">        :</span> <span class="mh">#656D78</span><span class="p">;</span>
+<span class="nv">$dark-gray</span><span class="o">   :</span> <span class="mh">#434A54</span><span class="p">;</span>
+
+<span class="nc">.highlight</span> <span class="p">{</span>
+  <span class="na">color</span><span class="o">:</span> <span class="nv">$medium-gray</span><span class="p">;</span>
+  <span class="na">line-height</span><span class="o">:</span> <span class="mi">1</span><span class="mf">.4</span><span class="kt">em</span><span class="p">;</span>
+  <span class="na">background</span><span class="o">:</span> <span class="nv">$dark-gray</span><span class="p">;</span>
+  <span class="na">border-radius</span><span class="o">:</span> <span class="mi">5</span><span class="kt">px</span><span class="p">;</span>
+  <span class="na">padding</span><span class="o">:</span> <span class="mi">1</span><span class="kt">em</span><span class="p">;</span>
+  <span class="na">margin</span><span class="o">:</span> <span class="mi">1</span><span class="kt">em</span> <span class="mi">0</span><span class="p">;</span>
+
+  <span class="nc">.c</span>     <span class="p">{</span> <span class="na">color</span><span class="o">:</span> <span class="nv">$medium-gray</span><span class="p">;</span> <span class="na">font-style</span><span class="o">:</span> <span class="no">italic</span> <span class="p">}</span> <span class="c1">// Comment</span>
+  <span class="nc">.err</span>   <span class="p">{</span> <span class="na">color</span><span class="o">:</span> <span class="nv">$grapefruit</span><span class="p">;</span> <span class="p">}</span> <span class="c1">// Error</span>
+  <span class="nc">.k</span>     <span class="p">{</span> <span class="na">color</span><span class="o">:</span> <span class="nv">$bittersweet</span><span class="p">;</span> <span class="p">}</span> <span class="c1">// Keyword</span>
+  <span class="nc">.o</span>     <span class="p">{</span> <span class="na">color</span><span class="o">:</span> <span class="nv">$light-gray</span> <span class="p">}</span> <span class="c1">// Operator</span>
+  <span class="nc">.cm</span>    <span class="p">{</span> <span class="na">color</span><span class="o">:</span> <span class="nv">$gray</span><span class="p">;</span> <span class="na">font-style</span><span class="o">:</span> <span class="no">italic</span> <span class="p">}</span> <span class="c1">// Comment.Multiline</span>
+  <span class="nc">.cp</span>    <span class="p">{</span> <span class="na">color</span><span class="o">:</span> <span class="nv">$gray</span><span class="p">;</span> <span class="na">font-weight</span><span class="o">:</span> <span class="no">bold</span> <span class="p">}</span> <span class="c1">// Comment.Preproc</span>
+  <span class="nc">.c1</span>    <span class="p">{</span> <span class="na">color</span><span class="o">:</span> <span class="nv">$gray</span><span class="p">;</span> <span class="na">font-style</span><span class="o">:</span> <span class="no">italic</span> <span class="p">}</span> <span class="c1">// Comment.Single</span>
+  <span class="nc">.cs</span>    <span class="p">{</span> <span class="na">color</span><span class="o">:</span> <span class="nv">$gray</span><span class="p">;</span> <span class="na">font-weight</span><span class="o">:</span> <span class="no">bold</span><span class="p">;</span> <span class="na">font-style</span><span class="o">:</span> <span class="no">italic</span> <span class="p">}</span> <span class="c1">// Comment.Special</span>
+  <span class="nc">.gd</span>    <span class="p">{</span> <span class="na">color</span><span class="o">:</span> <span class="nv">$gray</span><span class="p">;</span> <span class="na">background-color</span><span class="o">:</span> <span class="nv">$medium-gray</span> <span class="p">}</span> <span class="c1">// Generic.Deleted</span>
+  <span class="nc">.gd</span> <span class="nc">.x</span> <span class="p">{</span> <span class="na">color</span><span class="o">:</span> <span class="nv">$gray</span><span class="p">;</span> <span class="na">background-color</span><span class="o">:</span> <span class="nv">$medium-gray</span> <span class="p">}</span> <span class="c1">// Generic.Deleted.Specific</span>
+  <span class="nc">.ge</span>    <span class="p">{</span> <span class="na">font-style</span><span class="o">:</span> <span class="no">italic</span> <span class="p">}</span> <span class="c1">// Generic.Emph</span>
+  <span class="nc">.gr</span>    <span class="p">{</span> <span class="na">color</span><span class="o">:</span> <span class="nv">$lavendar</span> <span class="p">}</span> <span class="c1">// Generic.Error</span>
+  <span class="nc">.gh</span>    <span class="p">{</span> <span class="na">color</span><span class="o">:</span> <span class="nv">$gray</span> <span class="p">}</span> <span class="c1">// Generic.Heading</span>
+  <span class="nc">.gi</span>    <span class="p">{</span> <span class="na">color</span><span class="o">:</span> <span class="nv">$dark-gray</span><span class="p">;</span> <span class="na">background-color</span><span class="o">:</span> <span class="nv">$medium-gray</span> <span class="p">}</span> <span class="c1">// Generic.Inserted</span>
+  <span class="nc">.gi</span> <span class="nc">.x</span> <span class="p">{</span> <span class="na">color</span><span class="o">:</span> <span class="nv">$dark-gray</span><span class="p">;</span> <span class="na">background-color</span><span class="o">:</span> <span class="nv">$medium-gray</span> <span class="p">}</span> <span class="c1">// Generic.Inserted.Specific</span>
+  <span class="nc">.go</span>    <span class="p">{</span> <span class="na">color</span><span class="o">:</span> <span class="nv">$gray</span> <span class="p">}</span> <span class="c1">// Generic.Output</span>
+  <span class="nc">.gp</span>    <span class="p">{</span> <span class="na">color</span><span class="o">:</span> <span class="nv">$gray</span> <span class="p">}</span> <span class="c1">// Generic.Prompt</span>
+  <span class="nc">.gs</span>    <span class="p">{</span> <span class="na">font-weight</span><span class="o">:</span> <span class="no">bold</span> <span class="p">}</span> <span class="c1">// Generic.Strong</span>
+  <span class="nc">.gu</span>    <span class="p">{</span> <span class="na">color</span><span class="o">:</span> <span class="nv">$light-gray</span> <span class="p">}</span> <span class="c1">// Generic.Subheading</span>
+  <span class="nc">.gt</span>    <span class="p">{</span> <span class="na">color</span><span class="o">:</span> <span class="nv">$grapefruit</span> <span class="p">}</span> <span class="c1">// Generic.Traceback</span>
+  <span class="nc">.kc</span>    <span class="p">{</span> <span class="na">color</span><span class="o">:</span> <span class="nv">$sunflower</span> <span class="p">}</span> <span class="c1">// Keyword.Constant</span>
+  <span class="nc">.kd</span>    <span class="p">{</span> <span class="na">color</span><span class="o">:</span> <span class="nv">$sunflower</span> <span class="p">}</span> <span class="c1">// Keyword.Declaration</span>
+  <span class="nc">.kp</span>    <span class="p">{</span> <span class="na">color</span><span class="o">:</span> <span class="nv">$sunflower</span> <span class="p">}</span> <span class="c1">// Keyword.Pseudo</span>
+  <span class="nc">.kr</span>    <span class="p">{</span> <span class="na">color</span><span class="o">:</span> <span class="nv">$sunflower</span> <span class="p">}</span> <span class="c1">// Keyword.Reserved</span>
+  <span class="nc">.kt</span>    <span class="p">{</span> <span class="na">color</span><span class="o">:</span> <span class="nv">$blue-jeans</span> <span class="p">}</span> <span class="c1">// Keyword.Type</span>
+  <span class="nc">.m</span>     <span class="p">{</span> <span class="na">color</span><span class="o">:</span> <span class="nv">$grapefruit</span> <span class="p">}</span> <span class="c1">// Literal.Number</span>
+  <span class="nc">.s</span>     <span class="p">{</span> <span class="na">color</span><span class="o">:</span> <span class="nv">$grass</span> <span class="p">}</span> <span class="c1">// Literal.String</span>
+  <span class="nc">.na</span>    <span class="p">{</span> <span class="na">color</span><span class="o">:</span> <span class="nv">$aqua</span> <span class="p">}</span> <span class="c1">// Name.Attribute</span>
+  <span class="nc">.nb</span>    <span class="p">{</span> <span class="na">color</span><span class="o">:</span> <span class="nv">$mint</span> <span class="p">}</span> <span class="c1">// Name.Builtin</span>
+  <span class="nc">.nc</span>    <span class="p">{</span> <span class="na">color</span><span class="o">:</span> <span class="nv">$grapefruit</span> <span class="p">}</span> <span class="c1">// Name.Class</span>
+  <span class="nc">.no</span>    <span class="p">{</span> <span class="na">color</span><span class="o">:</span> <span class="nv">$grapefruit</span> <span class="p">}</span> <span class="c1">// Name.Constant</span>
+  <span class="nc">.ni</span>    <span class="p">{</span> <span class="na">color</span><span class="o">:</span> <span class="nv">$grapefruit</span> <span class="p">}</span> <span class="c1">// Name.Entity</span>
+  <span class="nc">.ne</span>    <span class="p">{</span> <span class="na">color</span><span class="o">:</span> <span class="nv">$light-gray</span> <span class="p">}</span> <span class="c1">// Name.Exception</span>
+  <span class="nc">.nf</span>    <span class="p">{</span> <span class="na">color</span><span class="o">:</span> <span class="nv">$sunflower</span> <span class="p">}</span> <span class="c1">// Name.Function</span>
+  <span class="nc">.nn</span>    <span class="p">{</span> <span class="na">color</span><span class="o">:</span> <span class="nv">$medium-gray</span> <span class="p">}</span> <span class="c1">// Name.Namespace</span>
+  <span class="nc">.nt</span>    <span class="p">{</span> <span class="na">color</span><span class="o">:</span> <span class="nv">$blue-jeans</span> <span class="p">}</span> <span class="c1">// Name.Tag</span>
+  <span class="nc">.nv</span>    <span class="p">{</span> <span class="na">color</span><span class="o">:</span> <span class="nv">$aqua</span> <span class="p">}</span> <span class="c1">// Name.Variable</span>
+  <span class="nc">.ow</span>    <span class="p">{</span> <span class="na">font-weight</span><span class="o">:</span> <span class="no">bold</span> <span class="p">}</span> <span class="c1">// Operator.Word</span>
+  <span class="nc">.w</span>     <span class="p">{</span> <span class="na">color</span><span class="o">:</span> <span class="nv">$light-gray</span> <span class="p">}</span> <span class="c1">// Text.Whitespace</span>
+  <span class="nc">.mf</span>    <span class="p">{</span> <span class="na">color</span><span class="o">:</span> <span class="nv">$blue-jeans</span> <span class="p">}</span> <span class="c1">// Literal.Number.Float</span>
+  <span class="nc">.mh</span>    <span class="p">{</span> <span class="na">color</span><span class="o">:</span> <span class="nv">$blue-jeans</span> <span class="p">}</span> <span class="c1">// Literal.Number.Hex</span>
+  <span class="nc">.mi</span>    <span class="p">{</span> <span class="na">color</span><span class="o">:</span> <span class="nv">$blue-jeans</span> <span class="p">}</span> <span class="c1">// Literal.Number.Integer</span>
+  <span class="nc">.mo</span>    <span class="p">{</span> <span class="na">color</span><span class="o">:</span> <span class="nv">$blue-jeans</span> <span class="p">}</span> <span class="c1">// Literal.Number.Oct</span>
+  <span class="nc">.sb</span>    <span class="p">{</span> <span class="na">color</span><span class="o">:</span> <span class="nv">$grass</span> <span class="p">}</span> <span class="c1">// Literal.String.Backtick</span>
+  <span class="nc">.sc</span>    <span class="p">{</span> <span class="na">color</span><span class="o">:</span> <span class="nv">$grass</span> <span class="p">}</span> <span class="c1">// Literal.String.Char</span>
+  <span class="nc">.sd</span>    <span class="p">{</span> <span class="na">color</span><span class="o">:</span> <span class="nv">$grass</span> <span class="p">}</span> <span class="c1">// Literal.String.Doc</span>
+  <span class="nc">.s2</span>    <span class="p">{</span> <span class="na">color</span><span class="o">:</span> <span class="nv">$grass</span> <span class="p">}</span> <span class="c1">// Literal.String.Double</span>
+  <span class="nc">.se</span>    <span class="p">{</span> <span class="na">color</span><span class="o">:</span> <span class="nv">$grass</span> <span class="p">}</span> <span class="c1">// Literal.String.Escape</span>
+  <span class="nc">.sh</span>    <span class="p">{</span> <span class="na">color</span><span class="o">:</span> <span class="nv">$grass</span> <span class="p">}</span> <span class="c1">// Literal.String.Heredoc</span>
+  <span class="nc">.si</span>    <span class="p">{</span> <span class="na">color</span><span class="o">:</span> <span class="nv">$grass</span> <span class="p">}</span> <span class="c1">// Literal.String.Interpol</span>
+  <span class="nc">.sx</span>    <span class="p">{</span> <span class="na">color</span><span class="o">:</span> <span class="nv">$grass</span> <span class="p">}</span> <span class="c1">// Literal.String.Other</span>
+  <span class="nc">.sr</span>    <span class="p">{</span> <span class="na">color</span><span class="o">:</span> <span class="nv">$pink-rose</span> <span class="p">}</span> <span class="c1">// Literal.String.Regex</span>
+  <span class="nc">.s1</span>    <span class="p">{</span> <span class="na">color</span><span class="o">:</span> <span class="nv">$grass</span> <span class="p">}</span> <span class="c1">// Literal.String.Single</span>
+  <span class="nc">.ss</span>    <span class="p">{</span> <span class="na">color</span><span class="o">:</span> <span class="nv">$lavendar</span> <span class="p">}</span> <span class="c1">// Literal.String.Symbol</span>
+  <span class="nc">.bp</span>    <span class="p">{</span> <span class="na">color</span><span class="o">:</span> <span class="nv">$medium-gray</span> <span class="p">}</span> <span class="c1">// Name.Builtin.Pseudo</span>
+  <span class="nc">.vc</span>    <span class="p">{</span> <span class="na">color</span><span class="o">:</span> <span class="nv">$grapefruit</span> <span class="p">}</span> <span class="c1">// Name.Variable.Class</span>
+  <span class="nc">.vg</span>    <span class="p">{</span> <span class="na">color</span><span class="o">:</span> <span class="nv">$grapefruit</span> <span class="p">}</span> <span class="c1">// Name.Variable.Global</span>
+  <span class="nc">.vi</span>    <span class="p">{</span> <span class="na">color</span><span class="o">:</span> <span class="nv">$aqua</span> <span class="p">}</span> <span class="c1">// Name.Variable.Instance</span>
+  <span class="nc">.il</span>    <span class="p">{</span> <span class="na">color</span><span class="o">:</span> <span class="nv">$blue-jeans</span> <span class="p">}</span> <span class="c1">// Literal.Number.Integer.Long</span>
+
+  <span class="nc">.lineno</span> <span class="p">{</span> <span class="na">color</span><span class="o">:</span> <span class="nv">$gray</span> <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>

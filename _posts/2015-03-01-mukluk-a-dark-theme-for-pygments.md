@@ -17,7 +17,7 @@ word to say).
 
 Here is the sass file I use:
 
-{% highlight sass %}
+{% codeblock mukluk.scss %}
 /**
  * Syntax highlighting styles
    Mukluk, based on bootflat
@@ -107,11 +107,11 @@ $dark-gray   : #434A54;
 
   .lineno { color: $gray }
 }
-{% endhighlight %}
+{% endcodeblock %}
 
 Here are some example of the syntax highlighting in various languages:
 
-{% highlight ruby %}
+{% codeblock example.rb %}
 # ruby
 module Foo
   def foo
@@ -145,10 +145,9 @@ class Bar < Baz
     hash_rockets = {:foo => "bar", :baz => "quux"}
   end
 end
-{% endhighlight %}
+{% endcodeblock %}
 
-{% highlight javascript linenos %}
-// javascript
+{% codeblock example.js %}
 $(document).ready(function() {
   var foo = "bar";
   window.foo = foo;
@@ -161,10 +160,10 @@ $(document).ready(function() {
     _grault: 1234
   }
 });
-{% endhighlight %}
+{% endcodeblock %}
 
-{% highlight lua %}
--- lua
+{% codeblock example.lua %}
+-- comment
 local a = require('mod2')
 local b = require('mod2')
 
@@ -178,10 +177,10 @@ print(t.key1)
 t.newKey = {}
 t.key2 = nil
 
-{% endhighlight %}
+{% endcodeblock %}
 
-{% highlight coffeescript linenos %}
-# coffeescript
+{% codeblock example.coffee %}
+# comment
 if this.studyingEconomics
   buy()  while supply > demand
   sell() until supply > demand
@@ -190,4 +189,4 @@ num = 6
 lyrics = while num -= 1
   "#{num} little monkeys, jumping on the bed.
     One fell out and bumped his head."
-{% endhighlight %}
+{% endcodeblock %}

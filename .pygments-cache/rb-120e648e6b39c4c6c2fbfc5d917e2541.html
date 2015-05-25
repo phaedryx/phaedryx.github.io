@@ -1,0 +1,12 @@
+<div class="highlight"><pre><span class="c1"># ...</span>
+
+<span class="n">devise_for</span> <span class="ss">:user</span><span class="p">,</span>
+  <span class="ss">class_name</span><span class="p">:</span> <span class="s1">&#39;Alchemy::User&#39;</span><span class="p">,</span>
+  <span class="ss">controllers</span><span class="p">:</span> <span class="p">{</span>
+    <span class="ss">sessions</span><span class="p">:</span> <span class="s1">&#39;alchemy/user_sessions&#39;</span><span class="p">,</span>
+    <span class="ss">:omniauth_callbacks</span> <span class="o">=&gt;</span> <span class="s2">&quot;alchemy/omniauth_callbacks&quot;</span>
+  <span class="p">},</span>
+  <span class="ss">skip</span><span class="p">:</span> <span class="o">[</span><span class="ss">:sessions</span><span class="p">,</span> <span class="ss">:passwords</span><span class="o">]</span>
+
+<span class="c1"># ...</span>
+</pre></div>

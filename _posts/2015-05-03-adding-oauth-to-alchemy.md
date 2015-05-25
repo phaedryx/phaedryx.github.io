@@ -17,29 +17,27 @@ devise already. It is part of the `Alchemy::User` model. You just need to add a
 couple more columns to track the `uid` and name of the OAuth `provider`. The
 migration looks like this:
 
-{% highlight ruby %}
-# db/migrate/..._add_columns_to_alchemy_users.rb
+{% codeblock db/migrate/xxxxx_add_columns_to_alchemy_users.rb %}
 class AddColumnsToAlchemyUsers < ActiveRecord::Migration
   def change
     add_column :alchemy_users, :uid, :string
     add_column :alchemy_users, :provider, :string
   end
 end
-{% endhighlight %}
+{% endcodeblock %}
 
 Next, add OAuth providers. This example uses Facebook and Google, but there are
 many [provider strategies](https://github.com/intridea/omniauth/wiki/List-of-Strategies)
 that you can choose from.
 
-{% highlight ruby %}
-# Gemfile
+{% codeblock lang:ruby Gemfile %}
 # ...
 
 gem 'omniauth-facebook'
 gem 'omniauth-google-oauth2'
 
 # ...
-{% endhighlight %}
+{% endcodeblock %}
 
 OAuth requires that you send a user to a provider who then redirects back to
 your site. This requires some setup on the provider's side beforehand. You can
@@ -56,8 +54,7 @@ omniauthable functionality in an initializer. One place this can be done is in
 the same place you are adding the credentials in the devise.rb initializer. In
 the end the file will have this added to it:
 
-{% highlight ruby %}
-# config/initializers/devise.rb
+{% codeblock config/initializers/devise.rb %}
 # ...
 
 Alchemy::User.class_exec {
@@ -75,7 +72,7 @@ config.omniauth :facebook, '<app_id>', '<app_secret>'
 config.omniauth :google_oauth2, '<app_id>', '<app_secret>'
 
 # ...
-{% endhighlight %}
+{% endcodeblock %}
 
 Not that a class method `.from_omniauth` is also being added. That will be used
 in the next step.
@@ -85,8 +82,7 @@ for the providers is in place, you need to have code to handle the users who are
 redirected back. This requires that you create omniauth callbacks. The code
 looks like this:
 
-{% highlight ruby %}
-# app/controllers/alchemy/omniauth_callbacks_controller.rb
+{% codeblock app/controllers/alchemy/omniauth_callbacks_controller.rb %}
 class Alchemy::OmniauthCallbacksController < Devise::OmniauthCallbacksController
   def facebook
     @user = Alchemy::User.from_omniauth(request.env["omniauth.auth"])
@@ -100,16 +96,15 @@ class Alchemy::OmniauthCallbacksController < Devise::OmniauthCallbacksController
     sign_in_and_redirect @user, :event => :authentication
   end
 end
-{% endhighlight %}
+{% endcodeblock %}
 
-Note that each methd is named after its associated provider. The code in this
+Note that each method is named after its associated provider. The code in this
 case is identical for each method and could be refactored into a single method.
 
 Now that the callbacks can be handled, they need routes pointing to them. This
 should be added to your routes file:
 
-{% highlight ruby %}
-# config/routes.rb
+{% codeblock config/routes.rb %}
 # ...
 
 devise_for :user,
@@ -121,15 +116,14 @@ devise_for :user,
   skip: [:sessions, :passwords]
 
 # ...
-{% endhighlight %}
+{% endcodeblock %}
 
 This is very close to the routes in the `alchemy-devise` gem.
 
 Lastly, you need to provide a way for users to sign in. Here is an example
 partial that can be included in site pages:
 
-{% highlight erb %}
-<%# app/views/shared/_sign_in.html.erb %>
+{% codeblock app/views/shared/_sign_in.html.erb %}
 <% if current_alchemy_user %>
   Signed in as <%= current_alchemy_user.email %> via <%= current_alchemy_user.provider.titleize %>
   <%= link_to "Sign Out", logout_path, method: :delete %>
@@ -137,6 +131,6 @@ partial that can be included in site pages:
   <%= link_to "Sign in with Facebook", user_omniauth_authorize_path(:facebook) %>
   <%= link_to "Sign in with Google", user_omniauth_authorize_path(:google_oauth2) %>
 <% end %>
-{% endhighlight %}
+{% endcodeblock %}
 
 Overall, a convenient way to allow people to sign in to your Alchemy-based site.
