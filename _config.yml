@@ -1,3 +1,7 @@
+# for heroku
+gems: ['kramdown']
+exclude: ['config.ru', 'Gemfile', 'Gemfile.lock', 'vendor', 'Procfile', 'Rakefile']
+
 # Build settings
 markdown: kramdown
 permalink: /:year/:month/:day/:title
