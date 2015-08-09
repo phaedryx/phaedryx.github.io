@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     
     <title>Phaedryx - Adding OAuth to Alchemy CMS</title>
-    <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:400,600,400italic|Source+Code+Pro|Oswald' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:400,600,400italic|Source+Code+Pro|Libre+Baskerville' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="/foundation/app.css" />
     <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
     <script src="/foundation/js/vendor/modernizr.js"></script>
@@ -13,28 +13,18 @@
   <body>
     <section role="main" class="scroll-container">
       <div id="container" class="row">
-        <div id="page" class="small-9 small-centered columns">
-          <div class="row">
-  <div id="nav" class="small-12 columns">
-    <a href="/" id="logo"><img src="/assets/logo.png"></a>
-    <div id="nav-links">
-    
-      <a href="/explanations">explanations</a>
-      <a href="/elsewhere">elsewhere</a>
-      <a href="/feed.xml" title="rss feed">feed</i></a>
-    
-    </div>
-  </div>
-</div>
-
-          <div class="row">
-  <div class="small-12 columns">
+        <div id="page" class="small-11 small-centered columns">
+          <section class="row">
+  <div class="small-3 columns post-title">
+    <h1>Adding OAuth to Alchemy CMS</h1>
     <div class="date">3 May 2015</div>
-    <h1 class="post-title">Adding OAuth to Alchemy CMS</h1>
+    <nav>
+      <a href="/2015/04/20/choosing-a-rails-cms"><i class="fa fa-arrow-circle-o-left"></i></a>
+      <a href="/"><i class="fa fa-arrow-circle-o-up"></i></a>
+      <a href=""><i class="fa fa-arrow-circle-o-right"></i></a>
+    </nav>
   </div>
-</div>
-<div class="row">
-  <div class="small-12 columns">
+  <div class="small-9 columns">
     <p>We have a project at work built on the Alchemy CMS. One of our needs for the
 project is to allow users sign in at the “member” level using third party
 OAuth credentials from companies like Facebook and Google. Because we are also
@@ -61,6 +51,9 @@ migration looks like this:</p>
 </span><span class="line"><span class="k">end</span>
 </span></code></pre></td></tr></table></div></figure></notextile></div>
 
+<aside>
+This is a note about the thing over there.
+</aside>
 <p>Next, add OAuth providers. This example uses Facebook and Google, but there are
 many <a href="https://github.com/intridea/omniauth/wiki/List-of-Strategies">provider strategies</a>
 that you can choose from.</p>
@@ -225,19 +218,15 @@ partial that can be included in site pages:</p>
 <p>Overall, a convenient way to allow people to sign in to your Alchemy-based site.</p>
 
   </div>
-</div>
+</section>
 
-          <img src="/assets/hr.svg" />
-<div id="footer" class="row">
-  <div class="small-12 columns center">
-    <div class="license center">
-      This work is licensed under a
-      <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">
-      Creative Commons Attribution-ShareAlike 4.0 International License
-    </a><br>
-      Tad Thorley
-    </div>
-  </div>
+          <img src="/assets/hr.svg" class='footer-image'/>
+<div class="license center">
+  This work is licensed under a
+  <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">
+  Creative Commons Attribution-ShareAlike 4.0 International License
+  </a><br>
+  Tad Thorley
 </div>
 <br>
 <br>

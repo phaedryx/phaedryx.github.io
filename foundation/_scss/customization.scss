@@ -3,7 +3,21 @@ body {
   background: #FFF;
 }
 #page {
-  padding-top: 0.5em;
+  margin-top: 60px;
+  aside {
+    position: absolute;
+    color: $gray4;
+    font-style: italic;
+    left: -196px;
+    width: 180px;
+    line-height: 1.1;
+    margin-top: 5px;
+    text-align: right;
+    font-family: "Libre Baskerville", serif;
+  }
+}
+#index {
+  margin-top: 10px;
 }
 #nav {
   margin-bottom: 3em;
@@ -36,7 +50,22 @@ body {
   }
 }
 .post-title {
-  margin-bottom: 1.2rem;
+  h1 {
+    font-size: 1.8rem;
+    text-align: right;
+    margin-bottom: 1rem;
+    margin-top: 10px;
+    border-top: 2px solid $gray6;
+    padding-top: 10px;
+  }
+  .date {
+    text-transform: uppercase;
+    font-size: 0.9rem;
+    text-align: right;
+  }
+  nav {
+    text-align: right;
+  }
 }
 
 @media #{$small-only} {
@@ -53,10 +82,7 @@ body {
 .license {
   font-size: 0.9rem;
 }
-.date {
-  text-transform: uppercase;
-  font-size: 0.9rem;
-}
+
 .categories {
   font-size: 0.75em;
 }
@@ -81,4 +107,7 @@ ul.unadorned {
 }
 .post {
   color: $gray6;
+}
+.footer-image {
+  width: 100%;
 }

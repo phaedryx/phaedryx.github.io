@@ -7,7 +7,7 @@
     <meta name="description" content="{{ page.description | strip_html }}">
     {% endif %}
     <title>{{ site.title }} - {{ page.title }}</title>
-    <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:400,600,400italic|Source+Code+Pro|Oswald' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:400,600,400italic|Source+Code+Pro|Libre+Baskerville' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="/foundation/app.css" />
     <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
     <script src="/foundation/js/vendor/modernizr.js"></script>
@@ -15,8 +15,7 @@
   <body>
     <section role="main" class="scroll-container">
       <div id="container" class="row">
-        <div id="page" class="small-9 small-centered columns">
-          {% include header.html %}
+        <div id="page" class="small-11 small-centered columns">
           {{ content }}
           {% include footer.html %}
         </div>

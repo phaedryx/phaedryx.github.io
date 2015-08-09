@@ -1,14 +1,17 @@
 ---
 layout: default
 ---
-<div class="row">
-  <div class="small-12 columns">
+<section class="row">
+  <div class="small-3 columns post-title">
+    <h1>{{ page.title }}</h1>
     <div class="date">{{ page.date | date: "%-d %B %Y"}}</div>
-    <h1 class="post-title">{{ page.title }}</h1>
+    <nav>
+      <a href="{{ page.previous.url }}"><i class="fa fa-arrow-circle-o-left"></i></a>
+      <a href="/"><i class="fa fa-arrow-circle-o-up"></i></a>
+      <a href="{{ page.next.url }}"><i class="fa fa-arrow-circle-o-right"></i></a>
+    </nav>
   </div>
-</div>
-<div class="row">
-  <div class="small-12 columns">
+  <div class="small-9 columns">
     {{ content }}
   </div>
-</div>
+</section>
