@@ -26,9 +26,6 @@ class AddColumnsToAlchemyUsers < ActiveRecord::Migration
 end
 {% endcodeblock %}
 
-<aside>
-This is a note about the thing over there.
-</aside>
 Next, add OAuth providers. This example uses Facebook and Google, but there are
 many [provider strategies](https://github.com/intridea/omniauth/wiki/List-of-Strategies)
 that you can choose from.
