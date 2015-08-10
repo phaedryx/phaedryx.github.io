@@ -54,6 +54,10 @@ omniauthable functionality in an initializer. One place this can be done is in
 the same place you are adding the credentials in the devise.rb initializer. In
 the end the file will have this added to it:
 
+<aside>
+Note that a class method <code>.from_omniauth</code> is also being added. That will be used
+in the next step.
+</aside>
 {% codeblock config/initializers/devise.rb %}
 # ...
 
@@ -74,14 +78,14 @@ config.omniauth :google_oauth2, '<app_id>', '<app_secret>'
 # ...
 {% endcodeblock %}
 
-Not that a class method `.from_omniauth` is also being added. That will be used
-in the next step.
-
 Now that the user model has been modified to use omniauth and the configuration
 for the providers is in place, you need to have code to handle the users who are
 redirected back. This requires that you create omniauth callbacks. The code
 looks like this:
-
+<aside>
+Note that each method is named after its associated provider. The code in this
+case is identical for each method and could be refactored into a single method.
+</aside>
 {% codeblock app/controllers/alchemy/omniauth_callbacks_controller.rb %}
 class Alchemy::OmniauthCallbacksController < Devise::OmniauthCallbacksController
   def facebook
@@ -97,9 +101,6 @@ class Alchemy::OmniauthCallbacksController < Devise::OmniauthCallbacksController
   end
 end
 {% endcodeblock %}
-
-Note that each method is named after its associated provider. The code in this
-case is identical for each method and could be refactored into a single method.
 
 Now that the callbacks can be handled, they need routes pointing to them. This
 should be added to your routes file:

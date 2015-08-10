@@ -5,8 +5,8 @@
     <description>webby goodness</description>
     <link>/</link>
     <atom:link href="/feed.xml" rel="self" type="application/rss+xml" />
-    <pubDate>Sun, 09 Aug 2015 17:03:10 -0600</pubDate>
-    <lastBuildDate>Sun, 09 Aug 2015 17:03:10 -0600</lastBuildDate>
+    <pubDate>Sun, 09 Aug 2015 18:56:15 -0600</pubDate>
+    <lastBuildDate>Sun, 09 Aug 2015 18:56:15 -0600</lastBuildDate>
     <generator>Jekyll v2.4.0</generator>
     
       <item>
@@ -71,6 +71,10 @@ omniauthable functionality in an initializer. One place this can be done is in
 the same place you are adding the credentials in the devise.rb initializer. In
 the end the file will have this added to it:&lt;/p&gt;
 
+&lt;aside&gt;
+Note that a class method &lt;code&gt;.from_omniauth&lt;/code&gt; is also being added. That will be used
+in the next step.
+&lt;/aside&gt;
 &lt;div class=&quot;bogus-wrapper&quot;&gt;&lt;notextile&gt;&lt;figure class=&quot;code&quot;&gt;&lt;figcaption&gt;&lt;span&gt;config/initializers/devise.rb &lt;/span&gt;&lt;/figcaption&gt;
 &lt;div class=&quot;highlight&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre class=&quot;line-numbers&quot;&gt;&lt;span class=&quot;line-number&quot;&gt;1&lt;/span&gt;
 &lt;span class=&quot;line-number&quot;&gt;2&lt;/span&gt;
@@ -108,14 +112,14 @@ the end the file will have this added to it:&lt;/p&gt;
 &lt;/span&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;c1&quot;&gt;# ...&lt;/span&gt;
 &lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/div&gt;&lt;/figure&gt;&lt;/notextile&gt;&lt;/div&gt;
 
-&lt;p&gt;Not that a class method &lt;code&gt;.from_omniauth&lt;/code&gt; is also being added. That will be used
-in the next step.&lt;/p&gt;
-
 &lt;p&gt;Now that the user model has been modified to use omniauth and the configuration
 for the providers is in place, you need to have code to handle the users who are
 redirected back. This requires that you create omniauth callbacks. The code
 looks like this:&lt;/p&gt;
-
+&lt;aside&gt;
+Note that each method is named after its associated provider. The code in this
+case is identical for each method and could be refactored into a single method.
+&lt;/aside&gt;
 &lt;div class=&quot;bogus-wrapper&quot;&gt;&lt;notextile&gt;&lt;figure class=&quot;code&quot;&gt;&lt;figcaption&gt;&lt;span&gt;app/controllers/alchemy/omniauth_callbacks_controller.rb &lt;/span&gt;&lt;/figcaption&gt;
 &lt;div class=&quot;highlight&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre class=&quot;line-numbers&quot;&gt;&lt;span class=&quot;line-number&quot;&gt;1&lt;/span&gt;
 &lt;span class=&quot;line-number&quot;&gt;2&lt;/span&gt;
@@ -144,9 +148,6 @@ looks like this:&lt;/p&gt;
 &lt;/span&gt;&lt;span class=&quot;line&quot;&gt;  &lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;
 &lt;/span&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;
 &lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/div&gt;&lt;/figure&gt;&lt;/notextile&gt;&lt;/div&gt;
-
-&lt;p&gt;Note that each method is named after its associated provider. The code in this
-case is identical for each method and could be refactored into a single method.&lt;/p&gt;
 
 &lt;p&gt;Now that the callbacks can be handled, they need routes pointing to them. This
 should be added to your routes file:&lt;/p&gt;
