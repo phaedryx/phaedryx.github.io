@@ -11,8 +11,8 @@ title: Main
         <p>
           {{ post.summary }}
           <br>
-          <i class="fa fa-list-ul"></i> <span class="categories">{{ post.categories | join: ', ' }}</span><br>
-          <i class="fa fa-calendar"></i> <span class="date">{{ post.date | date: "%-d %B %Y" }}</span>
+          <span class="categories"><i class="fa fa-tags"></i> {{ post.categories | join: ', ' }}</span><br>
+          <span class="date"><i class="fa fa-calendar"></i> {{ post.date | date: "%-d %B %Y" }}</span>
         </p>
       </li>
     {% endfor %}
